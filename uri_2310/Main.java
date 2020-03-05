@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.io.IOException;
 import java.util.Scanner; 
 
@@ -23,13 +24,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in); 
+        DecimalFormat df = new DecimalFormat("##00.00");
+        
+        String nome_jogador = "";
         
         int num_jogadores = 0; 
-        String nome_jogador = "";
+        int pontuacao_saque = 0; int qntd_acertos_pontuacao_saque = 0; int total_acertos_saque_time = 0; int total_pontuacao_saque_time = 0;
+        int pontuacao_bloqueio = 0; int qntd_acertos_pontuacao_bloqueio = 0; int  total_acertos_bloqueio_time = 0; int total_pontuacao_bloqueio_time = 0;
+        int pontuacao_ataque = 0; int qntd_acertos_pontuacao_ataque = 0; int total_acertos_ataque_time = 0; int total_pontuacao_ataque_time = 0;
 
-        int pontuacao_saque = 0; int qntd_acertos_pontuacao_saque = 0; int total_acertos_saque_time = 0; int total_pontuacao_saque_time = 0; int calculo1 = 0;
-        int pontuacao_bloqueio = 0; int qntd_acertos_pontuacao_bloqueio = 0; int  total_acertos_bloqueio_time = 0; int total_pontuacao_bloqueio_time = 0; int calculo2 = 0;
-        int pontuacao_ataque = 0; int qntd_acertos_pontuacao_ataque = 0; int total_acertos_ataque_time = 0; int total_pontuacao_ataque_time = 0; int calculo3 = 0;
+        double calculo1 = 0; double calculo2 = 0; double calculo3 = 0;
 
         num_jogadores = sc.nextInt();
 
@@ -53,21 +57,10 @@ public class Main {
             total_pontuacao_ataque_time += pontuacao_ataque;
         }
 
-        calculo1 = ((total_acertos_saque_time * 100) / total_pontuacao_saque_time);
-        calculo2 = ((total_acertos_bloqueio_time * 100) / total_pontuacao_bloqueio_time);
-        calculo3 = ((total_acertos_ataque_time * 100) / total_pontuacao_ataque_time);
+        calculo1 = ((total_acertos_saque_time * 100.00) / total_pontuacao_saque_time);
+        calculo2 = ((total_acertos_bloqueio_time * 100.00) / total_pontuacao_bloqueio_time);
+        calculo3 = ((total_acertos_ataque_time * 100.00) / total_pontuacao_ataque_time);
 
-        System.out.println("Total pontuação saque: " + total_acertos_saque_time);
-        System.out.println("Total pontuação bloqueio: " + total_acertos_bloqueio_time);
-        System.out.println("Total pontuação ataque: " + total_acertos_ataque_time);
-
-        System.out.println("\nTotal pontuação saque: " + total_pontuacao_saque_time);
-        System.out.println("Total pontuação bloqueio: " + total_pontuacao_bloqueio_time);
-        System.out.println("Total pontuação ataque: " + total_pontuacao_ataque_time);
-
-        System.out.println("\nPontos de saque:  " + calculo1 + " %.");
-        System.out.println("Pontos de bloqueio:  " + calculo2 + " %.");
-        System.out.println("Pontos de ataque:  " + calculo3 + " %.");
+        System.out.println("Pontos de Saque: " + df.format(calculo1) + " %." + "\nPontos de Bloqueio: " + df.format(calculo2) + " %." + "\nPontos de Ataque: " + df.format(calculo3) + " %.");
     }         
 }
-
