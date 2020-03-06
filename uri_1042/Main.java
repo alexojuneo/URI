@@ -2,6 +2,18 @@ import java.util.Arrays;
 import java.io.IOException;
 import java.util.Scanner; 
 
+/**
+ * DESCRIÇÃO: 
+ * Leia 3 valores inteiros e ordene-os em ordem crescente. 
+ * No final, mostre os valores em ordem crescente, uma linha em branco e em seguida, os valores na sequência como foram lidos.
+ * 
+ * ENTRADA:
+ * A entrada contem três números inteiros.
+ * 
+ * SAÍDA:
+ * Imprima a saída conforme foi especificado.
+ */
+
 public class Main {
  
     public static void main(String[] args) throws IOException {

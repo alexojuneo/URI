@@ -3,6 +3,19 @@ import java.text.DecimalFormat;
 import java.io.IOException;
 import java.util.Scanner; 
 
+/**
+ * DESCRIÇÃO: 
+ * Faça um programa que leia 6 valores. 
+ * Estes valores serão somente negativos ou positivos (desconsidere os valores nulos).
+ * A seguir, mostre a quantidade de valores positivos digitados.
+ * 
+ * ENTRADA:
+ * Seis valores, negativos e/ou positivos.
+ * 
+ * SAÍDA:
+ * Imprima uma mensagem dizendo quantos valores positivos foram lidos.
+ */
+
 public class Main {
  
     public static void main(String[] args) throws IOException {

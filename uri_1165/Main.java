@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 
  * ENTRADA:
  * A entrada contém vários casos de teste. A primeira linha da entrada contém um inteiro N (1 <= N <= 100), indicando o número de casos de teste da entrada.
- * Cada uma das N linhas seguintes contém um valor inteiro X (1 < X ≤ 10^7), que pode ser ou não, um número primo.
+ * Cada uma das N linhas seguintes contém um valor inteiro X (1 < X <= 10^7), que pode ser ou não, um número primo.
  * 
  * SAÍDA:
  * Para cada caso de teste de entrada, imprima a mensagem “X eh primo” ou “X nao eh primo”, de acordo com a especificação fornecida.
@@ -37,6 +37,9 @@ public class Main {
         }
     }
     public static boolean verificar_num_primo(int x){
+        if(x <= 1){
+            return false;
+        }
         for(int p = 2; p < x; p++){
             if(((x % p) == 0)){
                 return false;

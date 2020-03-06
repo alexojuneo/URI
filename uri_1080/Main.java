@@ -2,6 +2,17 @@ import java.util.Arrays;
 import java.io.IOException;
 import java.util.Scanner; 
 
+/**
+ * DESCRIÇÃO: 
+ * Leia 100 valores inteiros. Apresente então o maior valor lido e a posição dentre os 100 valores lidos.
+ * 
+ * ENTRADA:
+ * O arquivo de entrada contém 100 números inteiros, positivos e distintos.
+ * 
+ * SAÍDA:
+ * Apresente o maior valor lido e a posição de entrada, conforme exemplo abaixo.
+ */
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -24,9 +35,6 @@ public class Main {
         System.out.print(maior_valor + "\n" + (posicao_maior_valor + 1) + "\n");
     }
 }
-
-//1041, 1044
-
 
 /*import java.util.Arrays; 
 import java.util.Random;
