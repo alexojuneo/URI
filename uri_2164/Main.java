@@ -19,14 +19,22 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("#0.0");
+        DecimalFormat df = new DecimalFormat("##0.0");
 
-        int num = 0; int total = 0; 
-        num = sc.nextInt();
+        int n = 0; double fibonacci = 0.0; 
+        n = sc.nextInt();
 
-        for(int i = 3; i <= num; i++){
-            total = num - i;
-            System.out.println(df.format(total));
-        }
-	}
+        fibonacci = fib(n);
+
+        System.out.println(df.format(fibonacci));
+    }
+
+    public static double fib(int n){
+
+        double fib = 0.0;
+
+        fib = (Math.pow(((1 + Math.sqrt(5)) / 2),n) - (Math.pow(((1 - Math.sqrt(5)) / 2),n))) / Math.sqrt(5);
+
+        return fib;
+    }
 }
