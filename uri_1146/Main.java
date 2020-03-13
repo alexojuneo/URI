@@ -40,8 +40,6 @@ public class Main{
         }
         while(num != 0);
 
-
-
         /* LAÇO FOR */
         /**
         for(int num = sc.nextInt(); num != 0;){
