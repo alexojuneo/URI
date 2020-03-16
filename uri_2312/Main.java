@@ -35,7 +35,6 @@ public class Main{
         private int qntd_medalhas_ouro;
         private int qntd_medalhas_prata;
         private int qntd_medalhas_bronze;
-        private int soma_todas_medalhas_por_pais;
     
         public Pais(){}
     
@@ -67,13 +66,6 @@ public class Main{
             this.qntd_medalhas_bronze = QntdMedalhasBronze;
         }
     
-        public int getSomaMedalhasPorPais(){
-            return soma_todas_medalhas_por_pais;
-        }
-        public void setSomaMedalhasPorPais(int SomaMedalhasPorPais){
-            this.soma_todas_medalhas_por_pais = SomaMedalhasPorPais;
-        }
-    
         public int compareTo(Pais pais_objeto){
             if(this.getQntdMedalhasOuro() > pais_objeto.getQntdMedalhasOuro()){
                 return 1;
@@ -93,11 +85,11 @@ public class Main{
                 return 1;
             }
             else if(this.getQntdMedalhasBronze() < pais_objeto.getQntdMedalhasBronze()){
-                    return -1;
+                return -1;
             }
             else {
                 // ordem alfabetica
-                return this.getNomePais().compareTo(pais_objeto.getNomePais());
+                return - this.getNomePais().compareTo(pais_objeto.getNomePais());
             }
         }
     }
@@ -115,8 +107,6 @@ public class Main{
         int qntd_medalhas_prata = 0;
         int qntd_medalhas_bronze = 0;
 
-        int soma_todas_medalhas_por_pais = 0;
-
         List<Pais> paises = new ArrayList<Pais>();
 
         for(int i = 1; i <= num_paises_participantes; i++){
@@ -128,17 +118,15 @@ public class Main{
 
             Pais pais_objeto = new Pais();
 
-            soma_todas_medalhas_por_pais = qntd_medalhas_ouro + qntd_medalhas_prata + qntd_medalhas_bronze;
-
             pais_objeto.setNomePais(nome_pais);
             pais_objeto.setQntdMedalhasOuro(qntd_medalhas_ouro);
             pais_objeto.setQntdMedalhasPrata(qntd_medalhas_prata);
             pais_objeto.setQntdMedalhasBronze(qntd_medalhas_bronze);
-            pais_objeto.setSomaMedalhasPorPais(soma_todas_medalhas_por_pais);
 
             paises.add(pais_objeto);
             Collections.sort(paises, Collections.reverseOrder());
         }
+        
         for (int i = 0; i < paises.size(); i++) {
             Pais pais = new Pais();
             pais = paises.get(i);
